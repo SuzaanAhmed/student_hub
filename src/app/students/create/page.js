@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { useState } from "react";
-import InputField from "@/app/components/InputField";
+import InputField from "@/app/components/InputFields";
 import { supabase } from "@/app/lib/superbase";
 
 export default function CreatStudent() {
