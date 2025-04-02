@@ -42,7 +42,7 @@ export default function CreatStudent() {
                 onChange={(e) => setEmail(e.target.value)}
             />
             <InputField
-                type="text"
+                type="number"
                 value={phone}
                 placeholder="Student Phone No."
                 onChange={(e) => setPhone(e.target.value)}
@@ -67,23 +67,23 @@ export default function CreatStudent() {
                         return;
                     }
                     try {
-                        const { data, error } = await supabase.from('Student').insert([
+                        const { data, error } = await supabase.from('student').insert([
                             {
                                 name: name,
                                 usn: usn,
                                 phone: phone,
                                 email: email,
                                 address: address,
-                                gender: gender
+                                gender
                             }
                         ]).select();
                         if (error) {
                             throw error;
                         }
-                        alert(JSON.stringify(data));
+                        alert(`Student Profile Created \n ${JSON.stringify(data)}`);
+                        console.log(data)
                     } catch (e) {
-                        console.error("Error inserting data:", e.message);
-                        alert("Error inserting data: " + e.message);
+                        alert(`Error:${JSON.stringify(e)}`)
                     }
                 }}
                 className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
