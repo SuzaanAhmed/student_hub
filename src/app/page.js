@@ -24,7 +24,7 @@ export default function Home() {
             <div
               key={index}
               className="bg-gray-100 shadow-md h-auto w-[90%] rounded-lg p-3 border border-gray-300 text-center"
-            ><p></p>
+            >
               <h1 className="text-lg font-semibold text-gray-700">Name: {stud.name}</h1>
               <h1 className="text-md text-gray-600">USN: {stud.usn}</h1>
               <h1 className="text-md text-gray-600">Contact: {stud.phone}</h1>
